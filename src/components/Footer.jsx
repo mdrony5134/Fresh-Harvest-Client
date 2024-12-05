@@ -87,7 +87,7 @@ const Footer = () => {
         </div>
 
         {/* Footer bottom section */}
-        <div className="border-t pt-6 mt-8 text-center font-bold pb-6 text-sm text-gray-600 flex items-center justify-between">
+        <div className="border-t-2 border-grey-80 pt-6 mt-8 text-center font-bold pb-6 text-sm text-gray-600 flex items-center justify-between">
           © {new Date().getFullYear()} PageDone. All rights reserved.
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <div className="w-[32px] h-[32px] rounded-full bg-black flex items-center justify-center">

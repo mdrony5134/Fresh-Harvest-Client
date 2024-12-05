@@ -17,3 +17,22 @@ body {
   background-position: center, top right, bottom left; /* Position the second image at top-right and bottom-left */
 }
 
+.testimonial-slider {
+  padding: 20px 0;
+}
+
+.testimonial-slider .swiper-pagination-bullet {
+  background-color: #749B3F; /* Green color for pagination */
+  opacity: 1;
+}
+
+.testimonial-slider .swiper-pagination-bullet-active {
+  background-color: #FFA500; /* Orange color for active pagination */
+}
+
+.testimonial-slider .swiper-button-prev,
+.testimonial-slider .swiper-button-next {
+  color: #FFA500; /* Orange color for navigation buttons */
+}
+
+

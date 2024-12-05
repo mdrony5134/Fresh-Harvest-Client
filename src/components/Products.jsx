@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
+import { Link } from "react-router-dom";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -102,9 +103,11 @@ const Products = () => {
       {/* Show All Button */}
       {!showAll && filteredProducts.length > 8 && (
         <div className="text-center mt-10">
-          <button className="py-3 px-6 border border-primary text-primary font-semibold rounded-lg text-[18px]">
-            See All Products
-          </button>
+          <Link to='/shop'>
+            <button className="py-3 px-6 border border-primary text-primary font-semibold rounded-lg text-[18px]">
+              See All Products
+            </button>
+          </Link>
         </div>
       )}
     </div>

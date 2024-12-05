@@ -3,7 +3,7 @@ import Countdown from "react-countdown";
 
 const SeasonalOffer = () => {
   // Set the target date (e.g., 3 days from now)
-  const targetDate = new Date().getTime() + 3 * 24 * 60 * 60 * 1000;
+  const targetDate = new Date().getTime() + 5 * 24 * 60 * 60 * 1000;
 
   // Completion handler (optional)
   const handleComplete = () => {
