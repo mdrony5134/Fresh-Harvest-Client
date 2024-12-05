@@ -1,59 +1,139 @@
-import React from 'react'
-import { FaHeart, FaShoppingCart } from 'react-icons/fa'
-import { NavLink } from 'react-router-dom'
+import React, { useState } from 'react';
+import { FaHeart, FaShoppingCart } from 'react-icons/fa';
+import { NavLink } from 'react-router-dom';
+import Banner from './Banner';
 
 const Header = () => {
+  const [isLoginModalOpen, setLoginModalOpen] = useState(false);
+  const [isSignupModalOpen, setSignupModalOpen] = useState(false);
+
+  const handleLoginClick = () => {
+    setLoginModalOpen(true);
+    console.log("click")
+  };
+
+  const handleSignupClick = () => {
+    setSignupModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setLoginModalOpen(false);
+    setSignupModalOpen(false);
+  };
+
   return (
-    <div className='bg'>
-      <nav className='max-w-7xl mx-auto flex items-center justify-between py-9'>
-        <div className='flex items-center gap-1'>
+    <div className="bg">
+      <nav className="max-w-7xl mx-auto flex items-center justify-between py-9">
+        <div className="flex items-center gap-1">
           <img src="/images/Logo-1.png" alt="logo image" />
-          <h1 className='text-[35px] font-bold text-black'>Fresh harvest</h1>
+          <h1 className="text-[35px] font-bold text-black">Fresh harvest</h1>
         </div>
-        <div className='flex items-center gap-16 text-grey-100'>
-          <NavLink>Home</NavLink>
-          <NavLink>Shop</NavLink>
-          <NavLink>About Us</NavLink>
-          <NavLink>Blog</NavLink>
+        <div className="flex items-center gap-[40px] text-grey-100 text-[15px]">
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/shop">Shop</NavLink>
+          <NavLink to="aboutUs">About Us</NavLink>
+          <NavLink to="/blog">Blog</NavLink>
+          <NavLink to="/uploadProduct">Upload Product</NavLink>
         </div>
-        <div className='text-white flex items-center gap-5'>
+        <div className="text-white flex items-center gap-5">
           <NavLink className="flex items-center gap-1"><FaHeart />Favorites</NavLink>
           <NavLink className="flex items-center gap-1"><FaShoppingCart />Carts</NavLink>
-          <NavLink>
-            <button className='py-3 px-6 border border-white rounded-lg'>Sing in</button>
-          </NavLink>
+          {/* Changed NavLink to a button */}
+          <button onClick={handleLoginClick} className="py-3 px-6 border border-white rounded-lg">
+            Sign in
+          </button>
         </div>
       </nav>
-      {/* banner */}
-      <div className='max-w-7xl mx-auto pt-[78px]'>
-        <p className='text-green bg-grey-50 text-[20px] font-medium inline-block px-3 rounded-lg'>Welcome to Fresh Harvest</p>
-        <h1 className='text-black text-[70px] leading-[70px] font-medium my-4'>Fresh Fruits and <br /> Vegetables</h1>
-        <p className='md:w-[448px] w-full text-grey-100'>At Fresh Harvests, we are passionate about providing you with the freshest and most flavorful fruits and vegetables</p>
-        <button className='py-3 px-6 bg-primary text-white rounded-lg mt-8'>Shop Now</button>
-        <div className='ml-24 pt-6'>
-          <img src="/images/Vectors.png" alt="vector image" />
-        </div>
-        <div className='md:w-[331px] w-full bg-grey-50 rounded-lg shadow-md flex items-center justify-between p-3 ml-[200px]'>
-          <div>
-            <h2 className='text-green font-medium'>Special Offer</h2>
-            <h2 className='text-[28px] text-black font-medium'>Fresh Salad</h2>
-            <h2 className='text-green font-medium text-[24px] mb-3'>Up to <span className='text-black text-[24px] font-medium'>70% off</span></h2>
-            <h2 className='bg-[#176D38] text-white rounded-[50px] inline-block px-4 font-semibold uppercase'>Code: <span className='text-[#FAC714]'>Fresh25</span></h2>
-          </div>
-          <div> 
-            <img src="/images/offers.png" alt="offer image" />
-          </div>
-        </div>
-        <div className='mt-8 pb-12'>
-          <p>Download App:</p>
-          <div className='flex items-center gap-3 mt-2'>
-            <img src="/images/appstore.png" alt="app store image" />
-            <img src="/images/googleplay.png" alt="google play sore" />
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
+      <Banner />
 
-export default Header
+      {/* Login Modal */}
+      {isLoginModalOpen && (
+        <div className="fixed inset-0 bg-grey-50 bg-opacity-50 flex justify-center items-center">
+          <div className="bg-white p-6 rounded-lg w-[400px]">
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-xl font-semibold">Login</h2>
+              <button onClick={handleCloseModal} className="text-xl font-bold">×</button>
+            </div>
+            <div>
+              <label className="block mb-2 text-sm">Email</label>
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="w-full p-3 border rounded-md mb-4"
+              />
+            </div>
+            <div>
+              <label className="block mb-2 text-sm">Password</label>
+              <input
+                type="password"
+                placeholder="Enter your password"
+                className="w-full p-3 border rounded-md mb-4"
+              />
+            </div>
+            <div className="flex justify-between items-center mb-4">
+              <label className="flex items-center gap-2">
+                <input type="checkbox" />
+                Remember me
+              </label>
+              <NavLink to="/forgot-password" className="text-sm text-blue-500">Forgot Password</NavLink>
+            </div>
+            <div className="mb-4">
+              <button className="w-full py-3 bg-primary text-white rounded-lg">
+                Login
+              </button>
+            </div>
+            <p className="text-center text-sm">
+              Don’t have an account? <span onClick={handleSignupClick} className="text-blue-500 cursor-pointer">Sign up</span>
+            </p>
+          </div>
+        </div>
+      )}
+
+      {/* SignUp Modal */}
+      {isSignupModalOpen && (
+        <div className="fixed inset-0 bg-grey-50 bg-opacity-50 flex justify-center items-center">
+          <div className="bg-white p-6 rounded-lg w-[400px]">
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-xl font-semibold">Register</h2>
+              <button onClick={handleCloseModal} className="text-xl font-bold">×</button>
+            </div>
+            <div>
+              <label className="block mb-2 text-sm">Full Name</label>
+              <input
+                type="text"
+                placeholder="Enter your full name"
+                className="w-full p-3 border rounded-md mb-4"
+              />
+            </div>
+            <div>
+              <label className="block mb-2 text-sm">Email</label>
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="w-full p-3 border rounded-md mb-4"
+              />
+            </div>
+            <div>
+              <label className="block mb-2 text-sm">Password</label>
+              <input
+                type="password"
+                placeholder="Enter your password"
+                className="w-full p-3 border rounded-md mb-4"
+              />
+            </div>
+            <div className="mb-4">
+              <button className="w-full py-3 bg-primary text-white rounded-lg">
+                Register
+              </button>
+            </div>
+            <p className="text-center text-sm">
+              Already have an account? <span onClick={handleLoginClick} className="text-blue-500 cursor-pointer">Login</span>
+            </p>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default Header;

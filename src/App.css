@@ -7,3 +7,6 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.active{
+  border-bottom: 2px solid #749B3F;
+}
