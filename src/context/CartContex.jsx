@@ -9,7 +9,7 @@ export const CartProvider = ({ children }) => {
 
   const updateCartCount = async () => {
     try {
-      const response = await fetch("http://localhost:5000/cart");
+      const response = await fetch("https://fresh-harvest-server.vercel.app/cart");
       const cartItems = await response.json();
       setCartCount(cartItems.length);
     } catch (error) {
