@@ -30,14 +30,14 @@ const Testimonial = () => {
   return (
     <div className="max-w-7xl mx-auto py-12 px-4">
       {/* Section Header */}
-      <div className="text-center w-[560px] mx-auto mb-8">
-        <p className="text-green-600 bg-green-100 text-[20px] font-medium inline-block px-3 py-1 rounded-lg">
+      <div className="text-center max-w-full md:w-[560px] mx-auto mb-8">
+        <p className="text-green-600 bg-green-100 text-[16px] md:text-[20px] font-medium inline-block px-3 py-1 rounded-lg">
           Testimonial
         </p>
-        <h1 className="text-[45px] font-bold text-black">
+        <h1 className="text-[28px] md:text-[45px] font-bold text-black">
           What Our Customers Say
         </h1>
-        <p className="text-gray-600">
+        <p className="text-gray-600 text-[14px] md:text-base">
           Don't just take our word for it—here's what some of our customers have
           to say about their experience with Fresh Harvest.
         </p>
@@ -50,7 +50,7 @@ const Testimonial = () => {
           perPage: 1,
           gap: "1rem",
           pagination: true,
-          arrows: false, // Removed left and right arrows
+          arrows: false, 
           autoplay: true,
           interval: 3000,
         }}
@@ -59,23 +59,27 @@ const Testimonial = () => {
       >
         {testimonials.map((testimonial) => (
           <SplideSlide key={testimonial.id}>
-            <div className="flex flex-col md:flex-row items-center gap-24 w-[1013px] mx-auto">
+            <div className="flex flex-col md:flex-row items-center gap-6 md:gap-24 max-w-5xl mx-auto">
               {/* Customer Image */}
-              <div className="relative">
+              <div className="relativ w-3/4 md:w-[30%]">
                 <img
                   src={testimonial.image}
                   alt={testimonial.name}
-                  className="object-cover"
+                  className="object-cover w-full h-full"
                 />
               </div>
               {/* Testimonial Text */}
-              <div className="bg-grey-50 md:w-[640px] p-6 rounded-lg shadow-lg">
-                <p className="text-gray-700 italic mb-4">
+              <div className="bg-grey-50 w-full md:w-[640px] p-4 md:p-6 rounded-lg shadow-lg">
+                <p className="text-gray-700 italic mb-4 text-sm md:text-base">
                   "{testimonial.text}"
                 </p>
-                <div className="flex items-center gap-3">
-                  <h3 className="text-black font-bold">{testimonial.name}</h3>
-                  <p className="text-gray-500 text-sm">{testimonial.role}</p>
+                <div className="flex flex-col md:flex-row items-center gap-3">
+                  <h3 className="text-black font-bold text-sm md:text-base">
+                    {testimonial.name}
+                  </h3>
+                  <p className="text-gray-500 text-xs md:text-sm">
+                    {testimonial.role}
+                  </p>
                 </div>
               </div>
             </div>

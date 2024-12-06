@@ -37,11 +37,11 @@ const Shop = () => {
   }, [selectedCategory, products]);
 
   return (
-    <div className="max-w-7xl mx-auto pt-[80px] pb-[110px] flex gap-12">
+    <div className="max-w-7xl mx-auto pt-[150px] pb-[60px] md:pb-[110px] flex gap-12 flex-col md:flex-row">
       {/* Left Sidebar for Categories */}
-      <div className="w-[250px]">
+      <div className="w-[250px] mx-auto md:mx-0">
         <h2 className="text-[24px] font-bold text-black mb-6">Categories</h2>
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 justify-center">
           {/* Category Buttons */}
           <button
             onClick={() => setSelectedCategory("All")}
@@ -87,8 +87,8 @@ const Shop = () => {
       </div>
 
       {/* Right Section for Products */}
-      <div className="flex-1 text-center">
-        <h1 className="text-[45px] font-bold text-black mb-6">
+      <div className="flex-1 text-center px-4">
+        <h1 className="md:text-[45px] text-[30px] font-bold text-black mb-6">
           Our Fresh Products
         </h1>
         <p className="text-grey-100 mb-8">

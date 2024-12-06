@@ -3,7 +3,7 @@ import Countdown from "react-countdown";
 
 const SeasonalOffer = () => {
   // Set the target date (e.g., 3 days from now)
-  const targetDate = new Date().getTime() + 5 * 24 * 60 * 60 * 1000;
+  const targetDate = new Date().getTime() + 3 * 24 * 60 * 60 * 1000;
 
   // Completion handler (optional)
   const handleComplete = () => {
@@ -11,23 +11,23 @@ const SeasonalOffer = () => {
   };
 
   return (
-    <div className="bg-white py-12 offer-bg my-[145px]">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 px-4">
+    <div className="bg-white py-12 offer-bg my-[70px] md:my-[145px]">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
         {/* Text Section */}
         <div className="text-center md:text-left">
           <p className="text-green bg-grey-50 inline-block px-3 py-1 rounded-md text-sm font-medium mb-2">
             Special Offer
           </p>
-          <h1 className="text-[50px] leading-[80px] font-medium text-black">
+          <h1 className="md:text-[50px] md:leading-[50px] text-[30px] leading-[30px] font-medium text-black">
             Seasonal Fruit Bundle
           </h1>
-          <p className="text-[30px] mt-2">
+          <p className="md:text-[30px] text-[22px] mt-2">
             Discount up to{" "}
             <span className="text-primary font-semibold">80% OFF</span>
           </p>
 
           {/* Countdown Timer */}
-          <div className="flex gap-4 mt-6 justify-center md:justify-start">
+          <div className="flex md:gap-4 mt-6 justify-center md:justify-start gap-2">
             <Countdown
               date={targetDate}
               onComplete={handleComplete}
@@ -71,7 +71,7 @@ const SeasonalOffer = () => {
         </div>
 
         {/* Image Section */}
-        <div className="relative flex justify-center items-center pt-[70px]">
+        <div className="relative md:flex justify-center items-center pt-[70px] hidden">
           <img
             src="/images/offerfruits.png"
             alt="Seasonal Fruit Bundle"

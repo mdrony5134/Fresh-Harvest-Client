@@ -89,7 +89,7 @@ const Cart = () => {
   };
 
   return (
-    <div className="py-20 min-h-screen bg-white text-[#212337]">
+    <div className="md:pt-40 pt-24 pb-20 min-h-screen bg-white text-[#212337]">
       <h1 className="mb-10 text-center text-3xl font-bold text-[#212337]">
         Your Cart
       </h1>

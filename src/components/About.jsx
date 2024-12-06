@@ -2,26 +2,26 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="max-w-7xl mx-auto px-4 pb-[145px] bg-white">
+    <div className="max-w-7xl mx-auto px-4 pb-[20px] md:pb-[145px]  md:pt-0 bg-white md:px-0">
       <div className="flex flex-col md:flex-row items-center justify-between">
         {/* Image Section */}
         <div className="relative w-full md:w-1/2 flex justify-center">
           {/* Circle Background */}
-          <div className="absolute w-[300px] h-[300px] bg-[#749B3F] rounded-full top-28 left-40 z-0"></div>
+          <div className="absolute hidden md:block w-[300px] h-[300px] bg-[#749B3F] rounded-full top-28 left-40 z-0"></div>
           <img
             src="/images/aboutimg.png"
             alt="Farmer with fresh produce"
-            className="rounded-lg w-[75%] relative"
+            className="rounded-lg md:w-[75%] w-full relative"
           />
           {/* Tag */}
-          <div className="absolute top-[250px] left-[300px] bg-white shadow-md rounded-md px-4 py-2 z-20">
+          <div className="absolute md:top-[250px] md:left-[300px] top-[120px] left-[80px] bg-white shadow-md rounded-md px-4 py-2 z-20">
             <span className="text-black font-semibold flex items-center gap-2">
               <img className="w-[30px]" src="/images/Logo-1.png" alt="logo" />
               Fresh Harvests
             </span>
           </div>
           {/* Product Info */}
-          <div className="absolute top-[300px] left-[400px] bg-white bg-opacity-90 shadow-md rounded-md px-4 py-3 text-center w-[150px] z-20">
+          <div className="absolute top-[170px] left-[130px] md:top-[300px] md:left-[400px] bg-white bg-opacity-90 shadow-md rounded-md px-4 py-3 text-center w-[150px] z-20">
             <div className="bg-[#F4F6F6] p-5 rounded-[20px] flex items-center justify-center w-[100px] mx-auto">
               <img
                 className="w-full"
@@ -38,14 +38,14 @@ const About = () => {
         </div>
 
         {/* Text Section */}
-        <div className="w-full md:w-1/2 mt-8 md:mt-0 md:ml-8 text-center md:text-left">
+        <div className="w-full md:w-1/2 mt-40 md:mt-0 md:ml-8 text-center md:text-left">
           <div className="mb-4">
             <p className="text-green bg-grey-50 text-[20px] font-medium inline-block px-3 rounded-lg">
               About Us
             </p>
           </div>
           <h2 className="text-2xl font-bold text-black">About Fresh Harvest</h2>
-          <p className="mt-4 text-grey-100 leading-relaxed">
+          <p className="mt-4 text-grey-100">
             Welcome to Fresh Harvest, your premium destination for high-quality
             and fresh produce. We are passionate about providing you with the
             finest fruits, vegetables, and salad ingredients to nourish your

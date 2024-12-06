@@ -37,18 +37,18 @@ const Products = () => {
     : filteredProducts.slice(0, 8);
 
   return (
-    <div className="max-w-7xl mx-auto pt-[150px] pb-[110px]">
+    <div className="max-w-7xl mx-auto pt-[70px] pb-[60px] md:pt-[150px] md:pb-[110px] px-4 md:px-0">
       {/* Header Section */}
-      <div className="text-center w-[448px] mx-auto">
+      <div className="text-center md:w-[448px] w-full mx-auto">
         <p className="text-green bg-grey-50 text-[20px] font-medium inline-block px-3 rounded-lg">
           Our Products
         </p>
-        <h1 className="text-[45px] font-bold text-black">Our Fresh Products</h1>
+        <h1 className="md:text-[45px] text-[30px] leading-[30px] my-4 font-bold text-black">Our Fresh Products</h1>
         <p className="text-grey-100">
           We pride ourselves on offering a wide variety of fresh and flavorful
           fruits, vegetables, and salad ingredients.
         </p>
-        <div className="flex items-center gap-6 mt-4 mb-8">
+        <div className="flex items-center gap-6 mt-4 mb-8 md:flex-nowrap flex-wrap justify-center md:justify-normal">
           {/* Category Buttons */}
           <button
             onClick={() => setSelectedCategory("All")}
@@ -94,7 +94,7 @@ const Products = () => {
       </div>
 
       {/* Products Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:gap-8 gap-4">
         {productsToShow.map((product) => (
           <ProductCard key={product._id} product={product} />
         ))}

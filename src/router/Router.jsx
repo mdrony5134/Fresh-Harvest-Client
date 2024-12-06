@@ -5,6 +5,7 @@ import UploadProduct from "../pages/UploadProduct";
 import Shop from "../pages/Shop";
 import SingleProdcut from "../pages/SingleProdcut";
 import Cart from "../pages/Cart";
+import NotFound from "../pages/NotFound";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />,
+      },
+      {
+        path: "*",
+        element: <NotFound />,
       },
     ],
   },

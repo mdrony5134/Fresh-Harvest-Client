@@ -14,7 +14,7 @@ body {
   background-image: url('/public/images/Bg-4.png'), url('/images/Image-1.png');
   background-repeat: no-repeat;
   background-size: cover, auto;
-  background-position: center, top right, bottom left; /* Position the second image at top-right and bottom-left */
+  background-position: center, top right, bottom left; 
 }
 
 .testimonial-slider {

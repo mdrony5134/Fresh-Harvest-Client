@@ -49,7 +49,7 @@ const UploadProduct = () => {
   };
   return (
     <div>
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto py-[80px]">
         <div className="py-[25px] md:py-[50px]">
           <Link
             to="/"
