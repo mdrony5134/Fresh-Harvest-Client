@@ -20,7 +20,7 @@ const UploadProduct = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(productData);
-    fetch("http://localhost:5000/products", {
+    fetch("https://fresh-harvest-server.vercel.app/products", {
       method: "POST",
       headers: {
         "content-type": "application/json",

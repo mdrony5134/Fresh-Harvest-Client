@@ -12,7 +12,7 @@ const Cart = () => {
   useEffect(() => {
     const fetchCartData = async () => {
       try {
-        const response = await fetch("http://localhost:5000/cart");
+        const response = await fetch("https://fresh-harvest-server.vercel.app/cart");
         const data = await response.json();
         setCartItems(data);
 
@@ -43,7 +43,7 @@ const Cart = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/cart/${id}`, {
+        fetch(`https://fresh-harvest-server.vercel.app/cart/${id}`, {
           method: "DELETE",
         })
           .then((response) => response.json())

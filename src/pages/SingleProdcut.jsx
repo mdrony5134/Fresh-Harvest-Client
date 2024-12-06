@@ -10,7 +10,7 @@ const SingleProduct = () => {
     // Fetch the single product data
     const fetchProduct = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/products/${id}`);
+        const response = await fetch(`https://fresh-harvest-server.vercel.app/products/${id}`);
         const data = await response.json();
         setProduct(data);
       } catch (error) {
