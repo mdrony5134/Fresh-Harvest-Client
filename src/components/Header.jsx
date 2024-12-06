@@ -51,7 +51,7 @@ const Header = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:5000/login", {
+      const response = await fetch("https://fresh-harvest-a83a7.web.app/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -86,7 +86,7 @@ const Header = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:5000/register", {
+      const response = await fetch("https://fresh-harvest-a83a7.web.app/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -138,7 +138,7 @@ const Header = () => {
     }
   }, []);
 
-  
+
   // Clear token from localStorage and update authentication state
   const handleLogout = () => {
     localStorage.removeItem("authToken");

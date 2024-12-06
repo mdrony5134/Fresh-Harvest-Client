@@ -19,7 +19,7 @@ const ProductCard = ({ product }) => {
 
     try {
       // Fetch existing cart items
-      const response = await fetch("http://localhost:5000/cart");
+      const response = await fetch("https://fresh-harvest-a83a7.web.app/cart");
       const cartItems = await response.json();
 
       // Check if product is already in the cart
@@ -33,7 +33,7 @@ const ProductCard = ({ product }) => {
       }
 
       // Add the product to the cart
-      const addResponse = await fetch("http://localhost:5000/cart", {
+      const addResponse = await fetch("https://fresh-harvest-a83a7.web.app/cart", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newCartItem),
