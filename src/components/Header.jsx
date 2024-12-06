@@ -51,7 +51,7 @@ const Header = () => {
     }
 
     try {
-      const response = await fetch("https://fresh-harvest-a83a7.web.app/login", {
+      const response = await fetch("https://fresh-harvest-server.vercel.app/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -86,7 +86,7 @@ const Header = () => {
     }
 
     try {
-      const response = await fetch("https://fresh-harvest-a83a7.web.app/register", {
+      const response = await fetch("https://fresh-harvest-server.vercel.app/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -174,7 +174,7 @@ const Header = () => {
             <NavLink to="/shop">Shop</NavLink>
             <NavLink to="/aboutUs">About Us</NavLink>
             <NavLink to="/blog">Blog</NavLink>
-            <NavLink to="/uploadProduct">Upload Product</NavLink>
+            <NavLink to="/uploadProduct">{isAuthenticated && "Upload Product"}</NavLink>
           </div>
           <div
             className={`${
